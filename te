@@ -1,0 +1,29 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    int a[500000];
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> a[i];
+    }
+    bool tang = 1, giam = 1;
+    for (int i = 1; i < n; i++)
+    {
+        if (a[i] > a[i + 1])
+            tang = 0;
+        else
+            giam = 0;
+    }
+    if (tang)
+        cout << "Not decreasing";
+    else if (giam)
+        cout << "Not increasing";
+    else
+        cout << "Regular";
+    return 0;
+}
